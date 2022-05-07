@@ -22,9 +22,14 @@ export const theme: Theme = {
   },
   button: {
     primary: {
-      color: '#fff',
-      background: '#7c01ff',
-      hover: '#5701b3',
+      idle: {
+        color: '#fff',
+        background: '#7c01ff',
+      },
+      hover: {
+        color: '#fff',
+        background: '#5701b3',
+      },
     },
     secondary: {
       color: '#2d2d2d',

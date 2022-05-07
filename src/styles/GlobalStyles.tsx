@@ -2,10 +2,11 @@ import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
   html {
-    html {
+        :root {
+                font-size: 62.5%;
                 box-sizing: border-box;
         }
-        
+
         *, *::before, *::after {
                 box-sizing: inherit;
         }

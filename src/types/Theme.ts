@@ -20,9 +20,14 @@ export type Theme = {
   }
   button: {
     primary: {
-      color: string
-      background: string
-      hover: string
+      idle: {
+        color: string
+        background: string
+      }
+      hover: {
+        color: string
+        background: string
+      }
     }
     secondary: {
       color: string
