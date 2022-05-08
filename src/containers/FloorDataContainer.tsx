@@ -47,6 +47,7 @@ export const FloorDataContainer = () => {
         <Button
           label="Regresar"
           type="button"
+          variant="secondary"
           onClick={() => router.push('/direccion-apartamento')}
         />
         <Button type="submit" label="Siguiente" />

@@ -47,6 +47,7 @@ export const ClientDataContainer = () => {
         <Button
           label="Regresar"
           type="button"
+          variant="secondary"
           onClick={() => router.push('/')}
         />
         <Button type="submit" label="Siguiente" />

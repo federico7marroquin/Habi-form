@@ -47,6 +47,7 @@ export const AddressDataContainer = () => {
         <Button
           label="Regresar"
           type="button"
+          variant="secondary"
           onClick={() => router.push('/correo-electronico')}
         />
         <Button type="submit" label="Siguiente" />

@@ -55,6 +55,7 @@ export const OptionsDataContainer = () => {
         <Button
           label="Regresar"
           type="button"
+          variant="secondary"
           onClick={() => router.push('/numero-piso')}
         />
         <Button type="submit" label="Siguiente" />

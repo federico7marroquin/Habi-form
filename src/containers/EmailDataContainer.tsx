@@ -47,6 +47,7 @@ export const EmailDataContainer = () => {
         <Button
           label="Regresar"
           type="button"
+          variant="secondary"
           onClick={() => router.push('/datos-cliente')}
         />
         <Button type="submit" label="Siguiente" />

@@ -1,14 +1,21 @@
+import { Variant } from '@/types/ButtonVariant'
 import React from 'react'
 import { MyButton } from './styles'
 
 interface Props extends React.HTMLAttributes<HTMLElement> {
   label: string
+  variant?: Variant
   type?: 'submit' | 'button'
 }
 
-export const Button = ({ label, type, ...props }: Props) => {
+export const Button = ({
+  variant = 'primary',
+  label,
+  type,
+  ...props
+}: Props) => {
   return (
-    <MyButton type={type} as="button" {...props}>
+    <MyButton variant={variant} type={type} as="button" {...props}>
       {label}
     </MyButton>
   )
@@ -16,10 +23,11 @@ export const Button = ({ label, type, ...props }: Props) => {
 
 export const InnerButton = (
   {
+    variant = 'primary',
     label,
     onClick,
     href,
-  }: { label: string; onClick?: () => void; href?: string },
+  }: { variant?: Variant; label: string; onClick?: () => void; href?: string },
   ref:
     | ((instance: HTMLAnchorElement | null) => void)
     | React.RefObject<HTMLAnchorElement>
@@ -27,7 +35,7 @@ export const InnerButton = (
     | undefined
 ) => {
   return (
-    <MyButton href={href} onClick={onClick} ref={ref}>
+    <MyButton variant={variant} href={href} onClick={onClick} ref={ref}>
       {label}
     </MyButton>
   )
