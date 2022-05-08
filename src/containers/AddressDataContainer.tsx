@@ -1,6 +1,5 @@
 import React from 'react'
 import { useFormik } from 'formik'
-import { useRouter } from 'next/router'
 import { Button } from '@/components/Button'
 import {
   ButtonGroup,
@@ -12,10 +11,12 @@ import {
 } from '@/styles/Form'
 
 import { addressValidate as validate } from '@/utils/Validations'
+import { NavigationFunctions } from '@/types/Page'
 
-export const AddressDataContainer = () => {
-  const router = useRouter()
-
+export const AddressDataContainer = ({
+  goToPreviousPage,
+  goToNextPage,
+}: NavigationFunctions) => {
   const formik = useFormik({
     initialValues: {
       address: '',
@@ -23,7 +24,7 @@ export const AddressDataContainer = () => {
     validate,
     onSubmit: (values) => {
       console.log('submit', values)
-      router.push('/numero-piso')
+      goToNextPage()
     },
   })
 
@@ -48,7 +49,7 @@ export const AddressDataContainer = () => {
           label="Regresar"
           type="button"
           variant="secondary"
-          onClick={() => router.push('/correo-electronico')}
+          onClick={goToPreviousPage}
         />
         <Button type="submit" label="Siguiente" />
       </ButtonGroup>

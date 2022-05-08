@@ -1,8 +1,8 @@
 import React from 'react'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
-import { Main, AppContainer } from './styles'
-export const Layout = ({ children }: { children: React.ReactElement }) => {
+import { Main, AppContainer } from '@/styles/AppStyles'
+export const Layout = ({ children }: { children: JSX.Element }) => {
   return (
     <AppContainer>
       <Header progress={0} />

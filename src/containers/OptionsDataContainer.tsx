@@ -1,6 +1,5 @@
 import React from 'react'
 import { useFormik } from 'formik'
-import { useRouter } from 'next/router'
 import { Button } from '@/components/Button'
 import {
   ButtonGroup,
@@ -11,6 +10,7 @@ import {
   Checkbox,
   Label,
 } from '@/styles/Form'
+import { NavigationFunctions } from '@/types/Page'
 
 const Options = [
   { id: 1, label: ' Zona BBQ' },
@@ -18,16 +18,17 @@ const Options = [
   { id: 3, label: ' parque de juegos' },
 ]
 
-export const OptionsDataContainer = () => {
-  const router = useRouter()
-
+export const OptionsDataContainer = ({
+  goToPreviousPage,
+  goToNextPage,
+}: NavigationFunctions) => {
   const formik = useFormik({
     initialValues: {
       checked: [],
     },
     onSubmit: (values) => {
       console.log('submit', values)
-      router.push('/resumen')
+      goToNextPage()
     },
   })
 
@@ -56,7 +57,7 @@ export const OptionsDataContainer = () => {
           label="Regresar"
           type="button"
           variant="secondary"
-          onClick={() => router.push('/numero-piso')}
+          onClick={goToPreviousPage}
         />
         <Button type="submit" label="Siguiente" />
       </ButtonGroup>

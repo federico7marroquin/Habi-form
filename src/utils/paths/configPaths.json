@@ -1,0 +1,37 @@
+[
+  {
+    "path": "datos-cliente",
+    "containerName": "ClientDataContainer",
+    "order": 1,
+    "description": "Primer paso del formulario: Datos persones. El usuario debe de digitar el nombre y apellidos",
+    "title": "Datos del cliente"
+  },
+  {
+    "path": "correo-electronico",
+    "containerName": "EmailDataContainer",
+    "order": 2,
+    "description": "Segundo paso del formulario: Correo electrónico.  El usuario debe ingresar el correo electrónico",
+    "title": "Correo electrónico"
+  },
+  {
+    "path": "direccion-apartamento",
+    "containerName": "AddressDataContainer",
+    "order": 3,
+    "description": "Tercer paso del formulario: Dirección de apartamento.  El usuario debe ingresar la dirección del apartamento",
+    "title": "Dirección de apartamento"
+  },
+  {
+    "path": "numero-piso",
+    "containerName": "FloorDataContainer",
+    "order": 4,
+    "description": "Cuarto paso del formulario: Número de piso.  El usuario debe ingresar el número de piso donde se encuentra el apartamento",
+    "title": "Número de piso"
+  },
+  {
+    "path": "opciones-inmueble",
+    "containerName": "OptionsDataContainer",
+    "order": 5,
+    "description": "Quinto paso del formulario: Opciones.  El usuario debe escoger las opciones con las que cuenta su inmueble",
+    "title": "Opciones"
+  }
+]

@@ -4,6 +4,8 @@ import Head from 'next/head'
 import { LinkButton } from '@/components/Button'
 import { Title, Card, Description, Grid, ButtonContainer } from '@/styles/Home'
 import Link from 'next/link'
+import { Main, AppContainer } from '@/styles/AppStyles'
+import { Footer } from '@/components/Footer'
 
 const Home: NextPage = () => {
   return (
@@ -14,95 +16,104 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Title>
-        Federico{' '}
-        <a
-          target="_blank"
-          rel="noreferrer"
-          href="https://github.com/federico7marroquin"
-        >
-          Marroquín
-        </a>
-      </Title>
+      <AppContainer>
+        <Main>
+          <Title>
+            Federico{' '}
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://github.com/federico7marroquin"
+            >
+              Marroquín
+            </a>
+          </Title>
 
-      <Description>Ingeniero Web</Description>
+          <Description>Ingeniero Web</Description>
 
-      <Grid>
-        <Card
-          target="_blank"
-          rel="noreferrer"
-          href="https://github.com/federico7marroquin"
-        >
-          <h2>Github &rarr;</h2>
-          <p>
-            Aquí suelo subir proyectos y pruebas de concepto de todo tipo.
-            Landing pages, clones, APIs, videojuegos, etc.
-          </p>
-        </Card>
+          <Grid>
+            <Card
+              target="_blank"
+              rel="noreferrer"
+              href="https://github.com/federico7marroquin"
+            >
+              <h2>Github &rarr;</h2>
+              <p>
+                Aquí suelo subir proyectos y pruebas de concepto de todo tipo.
+                Landing pages, clones, APIs, videojuegos, etc.
+              </p>
+            </Card>
 
-        <Card
-          target="_blank"
-          rel="noreferrer"
-          href="https://www.linkedin.com/in/federico7marroquin/"
-        >
-          <h2>Linkedin &rarr;</h2>
-          <p>
-            Aquí puedes ver un resumen de mi camino como developer y varios de
-            los certificados que he obtenido!
-          </p>
-        </Card>
-      </Grid>
-      <Description>Mira otro de mis proyectos:</Description>
+            <Card
+              target="_blank"
+              rel="noreferrer"
+              href="https://www.linkedin.com/in/federico7marroquin/"
+            >
+              <h2>Linkedin &rarr;</h2>
+              <p>
+                Aquí puedes ver un resumen de mi camino como developer y varios
+                de los certificados que he obtenido!
+              </p>
+            </Card>
+          </Grid>
+          <Description>Mira otro de mis proyectos:</Description>
 
-      <Grid>
-        <Card
-          target="_blank"
-          rel="noreferrer"
-          href="https://federico7marroquin.github.io/batatabit-mobile-first/"
-        >
-          <h2>live project &rarr;</h2>
-          <p>Landing page. Enfocado en HTML Y CSS responsive.</p>
-        </Card>
-        <Card
-          target="_blank"
-          rel="noreferrer"
-          href="https://demo-correos.vercel.app/"
-        >
-          <h2>Live project &rarr;</h2>
-          <p>Dashboard Demo. Enfocado en React y Material UI</p>
-        </Card>
+          <Grid>
+            <Card
+              target="_blank"
+              rel="noreferrer"
+              href="https://federico7marroquin.github.io/batatabit-mobile-first/"
+            >
+              <h2>live project &rarr;</h2>
+              <p>Landing page. Enfocado en HTML Y CSS responsive.</p>
+            </Card>
+            <Card
+              target="_blank"
+              rel="noreferrer"
+              href="https://demo-correos.vercel.app/"
+            >
+              <h2>Live project &rarr;</h2>
+              <p>Dashboard Demo. Enfocado en React y Material UI</p>
+            </Card>
 
-        <Card
-          target="_blank"
-          rel="noreferrer"
-          href="https://petgram-fede.vercel.app/"
-        >
-          <h2>live project &rarr;</h2>
-          <p>Clon de instagram. Enfocado en React avanzado y optimización.</p>
-        </Card>
+            <Card
+              target="_blank"
+              rel="noreferrer"
+              href="https://petgram-fede.vercel.app/"
+            >
+              <h2>live project &rarr;</h2>
+              <p>
+                Clon de instagram. Enfocado en React avanzado y optimización.
+              </p>
+            </Card>
 
-        <Card
-          target="_blank"
-          rel="noreferrer"
-          href="https://federico7marroquin.github.io/bepro-metaverse-landing-page/"
-        >
-          <h2>live project &rarr;</h2>
-          <p>Landing page. Enfocado en Animación Web, HTML Y CSS responsive.</p>
-        </Card>
-        <Card
-          target="_blank"
-          rel="noreferrer"
-          href="https://federico7marroquin.github.io/Restaurante-italiano-Grid-layout/"
-        >
-          <h2>live project &rarr;</h2>
-          <p>Landing page. Enfocado en CSS responsive y Grid layout .</p>
-        </Card>
-      </Grid>
-      <ButtonContainer>
-        <Link href={'/datos-cliente'} passHref>
-          <LinkButton label="Iniciar experiencia" />
-        </Link>
-      </ButtonContainer>
+            <Card
+              target="_blank"
+              rel="noreferrer"
+              href="https://federico7marroquin.github.io/bepro-metaverse-landing-page/"
+            >
+              <h2>live project &rarr;</h2>
+              <p>
+                Landing page. Enfocado en Animación Web, HTML Y CSS responsive.
+              </p>
+            </Card>
+            <Card
+              target="_blank"
+              rel="noreferrer"
+              href="https://federico7marroquin.github.io/Restaurante-italiano-Grid-layout/"
+            >
+              <h2>live project &rarr;</h2>
+              <p>Landing page. Enfocado en CSS responsive y Grid layout .</p>
+            </Card>
+          </Grid>
+          <ButtonContainer>
+            <Link href={'/datos-cliente'} passHref>
+              <LinkButton label="Iniciar experiencia" />
+            </Link>
+          </ButtonContainer>
+        </Main>
+        <Footer />
+      </AppContainer>
     </>
   )
 }

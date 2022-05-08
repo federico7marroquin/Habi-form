@@ -1,6 +1,5 @@
 import React from 'react'
 import { useFormik } from 'formik'
-import { useRouter } from 'next/router'
 import { Button } from '@/components/Button'
 import {
   ButtonGroup,
@@ -12,10 +11,12 @@ import {
 } from '@/styles/Form'
 
 import { floorValidate as validate } from '@/utils/Validations'
+import { NavigationFunctions } from '@/types/Page'
 
-export const FloorDataContainer = () => {
-  const router = useRouter()
-
+export const FloorDataContainer = ({
+  goToPreviousPage,
+  goToNextPage,
+}: NavigationFunctions) => {
   const formik = useFormik({
     initialValues: {
       floor: 0,
@@ -23,7 +24,7 @@ export const FloorDataContainer = () => {
     validate,
     onSubmit: (values) => {
       console.log('submit', values)
-      router.push('/opciones-inmueble')
+      goToNextPage()
     },
   })
 
@@ -48,7 +49,7 @@ export const FloorDataContainer = () => {
           label="Regresar"
           type="button"
           variant="secondary"
-          onClick={() => router.push('/direccion-apartamento')}
+          onClick={goToPreviousPage}
         />
         <Button type="submit" label="Siguiente" />
       </ButtonGroup>
