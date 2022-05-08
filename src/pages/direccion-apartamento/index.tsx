@@ -1,10 +1,11 @@
 import Head from 'next/head'
+import { AddressDataContainer } from '@/containers/AddressDataContainer'
 /**
  * Page that represents the third step 3
  *  "Tercer paso: Dirección del apartamento"
  * @returns page
  */
-const Adress = () => {
+const address = () => {
   return (
     <>
       <Head>
@@ -14,9 +15,9 @@ const Adress = () => {
           content="Tercer paso del formulario: Dirección de apartamento.  El usuario debe ingresar la dirección del apartamento"
         />
       </Head>
-      <div>Dirección de apartamento</div>
+      <AddressDataContainer />
     </>
   )
 }
 
-export default Adress
+export default address

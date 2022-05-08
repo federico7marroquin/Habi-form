@@ -17,7 +17,7 @@ export const theme: Theme = {
     },
     focus: {
       background: '#e6fef9',
-      border: '00f2c3',
+      border: '#00f2c3',
     },
   },
   button: {
@@ -32,9 +32,14 @@ export const theme: Theme = {
       },
     },
     secondary: {
-      color: '#2d2d2d',
-      background: '#ffffff',
-      hover: '#dddddd',
+      idle: {
+        color: '#2d2d2d',
+        background: '#ffffff',
+      },
+      hover: {
+        color: '#2d2d2d',
+        background: '#dddddd',
+      },
     },
   },
 }

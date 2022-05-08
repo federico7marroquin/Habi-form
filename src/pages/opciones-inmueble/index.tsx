@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { OptionsDataContainer } from '@/containers/OptionsDataContainer'
 /**
  * Page that represents the fifth step 5
  *  "Quinto paso: Unos checkbox que me digan si el apartamento tiene alguna de las
@@ -15,7 +16,7 @@ const PropertyOptions = () => {
           content="Quinto paso del formulario: Opciones.  El usuario debe escoger las opciones con las que cuenta su inmueble"
         />
       </Head>
-      <div>Opciones</div>
+      <OptionsDataContainer />
     </>
   )
 }

@@ -30,9 +30,14 @@ export type Theme = {
       }
     }
     secondary: {
-      color: string
-      background: string
-      hover: string
+      idle: {
+        color: string
+        background: string
+      }
+      hover: {
+        color: string
+        background: string
+      }
     }
   }
 }
