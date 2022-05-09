@@ -32,6 +32,6 @@
     "containerName": "OptionsDataContainer",
     "order": 5,
     "description": "Quinto paso del formulario: Opciones.  El usuario debe escoger las opciones con las que cuenta su inmueble",
-    "title": "Opciones"
+    "title": "Opciones del inmueble"
   }
 ]

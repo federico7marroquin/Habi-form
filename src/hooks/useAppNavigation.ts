@@ -9,13 +9,11 @@ import { useAppSelector } from './useReduxHooks'
  * @param path
  * @returns  [goToPreviousPage, goToNextPage]
  */
-export const useAppNavigation = (path: string) => {
+export const useAppNavigation = () => {
   const router = useRouter()
-
-  const { nextPath, prevPath }: PageNavigation = useAppSelector(
-    (state: AppState) => pageSelector(state, path)
+  const { nextPath, prevPath, step }: PageNavigation = useAppSelector(
+    (state: AppState) => pageSelector(state, router.asPath.split('/')[1])
   )
-
   const goToPreviousPage = () => {
     router.push(prevPath)
   }
@@ -23,5 +21,5 @@ export const useAppNavigation = (path: string) => {
   const goToNextPage = () => {
     router.push(nextPath)
   }
-  return [goToPreviousPage, goToNextPage]
+  return { goToPreviousPage, goToNextPage, step }
 }

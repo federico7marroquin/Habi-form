@@ -5,10 +5,12 @@ import { Layout } from '@/components/Layout'
 import { SelectContainer } from 'Containers/SelectContainer'
 import { store } from '@/store/index'
 import { useAppNavigation } from '@/hooks/useAppNavigation'
+import { Resume } from '@/components/Resume'
+import { FlexContainer, ResumeWrapper } from '@/styles/AppStyles'
+import { Modal } from '@/components/Modal'
 
 const DynamicPage = ({ page }: { page: Page }) => {
-  const [goToPreviousPage, goToNextPage] = useAppNavigation(page.path)
-
+  const { goToPreviousPage, goToNextPage } = useAppNavigation()
   return (
     <>
       <Head>
@@ -16,10 +18,18 @@ const DynamicPage = ({ page }: { page: Page }) => {
         <meta name="description" content={page.description} />
       </Head>
       <Layout>
-        <SelectContainer
-          navigationFunctions={{ goToPreviousPage, goToNextPage }}
-          containerName={page.containerName}
-        />
+        <>
+          <FlexContainer>
+            <SelectContainer
+              navigationFunctions={{ goToPreviousPage, goToNextPage }}
+              containerName={page.containerName}
+            />
+            <ResumeWrapper>
+              <Resume />
+            </ResumeWrapper>
+          </FlexContainer>
+          <Modal />
+        </>
       </Layout>
     </>
   )

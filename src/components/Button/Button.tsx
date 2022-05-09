@@ -5,17 +5,26 @@ import { MyButton } from './styles'
 interface Props extends React.HTMLAttributes<HTMLElement> {
   label: string
   variant?: Variant
+  maxWidth?: string
   type?: 'submit' | 'button'
 }
 
 export const Button = ({
   variant = 'primary',
+  maxWidth,
   label,
   type,
   ...props
 }: Props) => {
   return (
-    <MyButton variant={variant} type={type} as="button" {...props}>
+    <MyButton
+      tabIndex={0}
+      maxWidth={maxWidth}
+      variant={variant}
+      type={type}
+      as="button"
+      {...props}
+    >
       {label}
     </MyButton>
   )

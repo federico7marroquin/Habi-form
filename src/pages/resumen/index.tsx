@@ -1,3 +1,5 @@
+import { Layout } from '@/components/Layout'
+import { ResumeContainer } from 'Containers'
 import Head from 'next/head'
 /**
  * Page that represents the sixth step 6
@@ -15,7 +17,9 @@ const Review = () => {
           content="Paso final del formulario: Resumen. Se presenta el resumen de los datos registrados por el usuario"
         />
       </Head>
-      <div>Resumen</div>
+      <Layout>
+        <ResumeContainer />
+      </Layout>
     </>
   )
 }

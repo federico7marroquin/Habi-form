@@ -12,18 +12,22 @@ import {
 
 import { floorValidate as validate } from '@/utils/Validations'
 import { NavigationFunctions } from '@/types/Page'
+import { useAppDispatch } from '@/hooks/useReduxHooks'
+import { updateField } from '@/store/resume'
 
 export const FloorDataContainer = ({
   goToPreviousPage,
   goToNextPage,
 }: NavigationFunctions) => {
+  const dispatch = useAppDispatch()
+
   const formik = useFormik({
     initialValues: {
       floor: 0,
     },
     validate,
     onSubmit: (values) => {
-      console.log('submit', values)
+      dispatch(updateField(values))
       goToNextPage()
     },
   })
@@ -33,6 +37,7 @@ export const FloorDataContainer = ({
       <FormControl>
         <Label htmlFor="floor">Piso</Label>
         <Input
+          autoFocus
           id="floor"
           name="floor"
           type="number"

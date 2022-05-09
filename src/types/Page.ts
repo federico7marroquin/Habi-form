@@ -14,6 +14,7 @@ export interface NavigationFunctions {
 export interface PageNavigation {
   prevPath: string
   nextPath: string
+  step: number
 }
 
 export type ContainerName =

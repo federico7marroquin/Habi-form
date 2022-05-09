@@ -11,23 +11,28 @@ import {
   Label,
 } from '@/styles/Form'
 import { NavigationFunctions } from '@/types/Page'
+import { useAppDispatch } from '@/hooks/useReduxHooks'
+import { updateField } from '@/store/resume'
 
+//Valores quemados por simplicidad
 const Options = [
-  { id: 1, label: ' Zona BBQ' },
-  { id: 2, label: 'salón comunal' },
-  { id: 3, label: ' parque de juegos' },
+  { id: 0, label: ' Zona BBQ' },
+  { id: 1, label: 'salón comunal' },
+  { id: 2, label: ' parque de juegos' },
 ]
 
 export const OptionsDataContainer = ({
   goToPreviousPage,
   goToNextPage,
 }: NavigationFunctions) => {
+  const dispatch = useAppDispatch()
+
   const formik = useFormik({
     initialValues: {
       checked: [],
     },
     onSubmit: (values) => {
-      console.log('submit', values)
+      dispatch(updateField(values))
       goToNextPage()
     },
   })
@@ -44,7 +49,8 @@ export const OptionsDataContainer = ({
               <Checkbox
                 type="checkbox"
                 name="checked"
-                value={id}
+                value={label}
+                onClick={(e) => e.preventDefault()}
                 onChange={formik.handleChange}
               />
               {label}

@@ -2,9 +2,6 @@ import { createSlice, createSelector, PayloadAction } from '@reduxjs/toolkit'
 import * as configPaths from '@/utils/paths/configPaths.json'
 import { Page, PageNavigation } from '@/types/Page'
 import { AppState } from '..'
-export interface CounterState {
-  value: number
-}
 
 const initialState: Page[] = Array.from(configPaths).sort((a, b) =>
   a.order > b.order ? 1 : -1
@@ -36,7 +33,7 @@ export const pageSelector = createSelector(
   (steps, pagePath) => {
     const index = steps.findIndex((step) => step.path === pagePath)
     //selects the previous step
-    const prevPath = `/${index > 0 && steps[index - 1].path}`
+    const prevPath = `/${index > 0 ? steps[index - 1].path : ''}`
     //selects the next step
     const nextPath = `/${
       index === steps.length - 1 ? 'resumen' : steps[index + 1].path
@@ -45,8 +42,35 @@ export const pageSelector = createSelector(
     const augmentatedPage: PageNavigation = {
       prevPath,
       nextPath,
+      step: pagePath === 'resumen' ? -1 : steps[index].order,
     }
     return augmentatedPage
+  }
+)
+
+export const selectNumberOfSteps = (state: AppState) => state.steps.length
+export const selectProgress = (_: AppState, step: number) => step
+export const progressSelector = createSelector(
+  selectSteps,
+  selectProgress,
+  (steps, step) => {
+    const length = steps.length
+    let progress = ''
+    let stepTitle = ''
+    if (step === -1) {
+      progress = '100%'
+      stepTitle = 'Resumen'
+    } else {
+      stepTitle = steps[step - 1]?.title
+      progress = `${(step * 100) / length}%`
+    }
+
+    return {
+      stepTitle,
+      length,
+      step: step === -1 ? length : step,
+      progress: progress,
+    }
   }
 )
 

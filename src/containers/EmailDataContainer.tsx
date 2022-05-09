@@ -12,18 +12,22 @@ import {
 
 import { emailValidate as validate } from '@/utils/Validations'
 import { NavigationFunctions } from '@/types/Page'
+import { useAppDispatch } from '@/hooks/useReduxHooks'
+import { updateField } from '@/store/resume'
 
 export const EmailDataContainer = ({
   goToPreviousPage,
   goToNextPage,
 }: NavigationFunctions) => {
+  const dispatch = useAppDispatch()
+
   const formik = useFormik({
     initialValues: {
       email: '',
     },
     validate,
     onSubmit: (values) => {
-      console.log('submit', values)
+      dispatch(updateField(values))
       goToNextPage()
     },
   })
@@ -33,6 +37,7 @@ export const EmailDataContainer = ({
       <FormControl>
         <Label htmlFor="email">Correo electrónico</Label>
         <Input
+          autoFocus
           id="email"
           name="email"
           type="email"

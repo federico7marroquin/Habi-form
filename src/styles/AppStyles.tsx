@@ -12,3 +12,18 @@ export const Main = styled.main`
   justify-content: center;
   align-items: center;
 `
+
+export const FlexContainer = styled.div`
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+`
+
+export const ResumeWrapper = styled.div`
+  display: none;
+
+  @media (min-width: 600px) {
+    display: block;
+  }
+`
