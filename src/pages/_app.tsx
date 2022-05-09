@@ -4,15 +4,21 @@ import { ThemeProvider } from 'styled-components'
 import { theme } from '@/styles/theme'
 import { Provider } from 'react-redux'
 import { store } from '@/store/index'
+import Head from 'next/head'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <Provider store={store}>
+    <>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
       <GlobalStyle />
-      <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
-      </ThemeProvider>
-    </Provider>
+      <Provider store={store}>
+        <ThemeProvider theme={theme}>
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </Provider>
+    </>
   )
 }
 

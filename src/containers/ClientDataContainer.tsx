@@ -12,18 +12,22 @@ import {
 
 import { nameValidate as validate } from '@/utils/Validations'
 import { NavigationFunctions } from '@/types/Page'
+import { updateField } from '@/store/resume'
+import { useAppDispatch } from '@/hooks/useReduxHooks'
 
 export const ClientDataContainer = ({
   goToPreviousPage,
   goToNextPage,
 }: NavigationFunctions) => {
+  const dispatch = useAppDispatch()
+
   const formik = useFormik({
     initialValues: {
       name: '',
     },
     validate,
     onSubmit: (values) => {
-      console.log('submit', values)
+      dispatch(updateField(values))
       goToNextPage()
     },
   })
@@ -33,6 +37,7 @@ export const ClientDataContainer = ({
       <FormControl>
         <Label htmlFor="name">Nombres y apellidos completos</Label>
         <Input
+          autoFocus
           id="name"
           name="name"
           type="text"

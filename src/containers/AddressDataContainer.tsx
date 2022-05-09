@@ -12,18 +12,22 @@ import {
 
 import { addressValidate as validate } from '@/utils/Validations'
 import { NavigationFunctions } from '@/types/Page'
+import { useAppDispatch } from '@/hooks/useReduxHooks'
+import { updateField } from '@/store/resume'
 
 export const AddressDataContainer = ({
   goToPreviousPage,
   goToNextPage,
 }: NavigationFunctions) => {
+  const dispatch = useAppDispatch()
+
   const formik = useFormik({
     initialValues: {
       address: '',
     },
     validate,
     onSubmit: (values) => {
-      console.log('submit', values)
+      dispatch(updateField(values))
       goToNextPage()
     },
   })
@@ -33,6 +37,7 @@ export const AddressDataContainer = ({
       <FormControl>
         <Label htmlFor="address">Dirección del inmueble</Label>
         <Input
+          autoFocus
           id="address"
           name="address"
           type="address"

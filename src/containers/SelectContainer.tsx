@@ -1,11 +1,9 @@
 import { ContainerName, NavigationFunctions } from '@/types/Page'
-import {
-  AddressDataContainer,
-  ClientDataContainer,
-  EmailDataContainer,
-  FloorDataContainer,
-  OptionsDataContainer,
-} from 'Containers/index'
+import { AddressDataContainer } from './AddressDataContainer'
+import { ClientDataContainer } from './ClientDataContainer'
+import { EmailDataContainer } from './EmailDataContainer'
+import { FloorDataContainer } from './FloorDataContainer'
+import { OptionsDataContainer } from './OptionsDataContainer'
 
 import React from 'react'
 export const SelectContainer = ({

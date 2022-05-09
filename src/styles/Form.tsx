@@ -2,7 +2,7 @@ import { Theme } from '@/types/Theme'
 import styled from 'styled-components'
 
 export const Form = styled.form`
-  margin-top: 40px;
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -27,7 +27,7 @@ export const Label = styled.label<{ textAlign?: string }>`
 export const Input = styled.input`
   width: 100%;
   line-height: 1.6rem;
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   font-weight: bold;
   height: 5.6rem;
   padding: 6px 16px;
@@ -78,10 +78,11 @@ export const ErrorLabel = styled.div`
   color: ${({ theme }: { theme: Theme }) => theme.error};
 `
 
-export const ButtonGroup = styled.div`
-  margin-top: 40px;
+export const ButtonGroup = styled.div<{ justifyContent?: string }>`
+  margin-top: 20px;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: ${({ justifyContent }: { justifyContent?: string }) =>
+    justifyContent ? justifyContent : ' space-between'};
   gap: 20px;
 `
