@@ -50,7 +50,6 @@ export const OptionsDataContainer = ({
                 type="checkbox"
                 name="checked"
                 value={label}
-                onClick={(e) => e.preventDefault()}
                 onChange={formik.handleChange}
               />
               {label}

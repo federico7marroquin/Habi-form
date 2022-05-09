@@ -30,7 +30,7 @@ export const GlobalStyle = createGlobalStyle`
                 background: #fff;
                 height: 100vh;
                 margin: 0 auto;
-                max-width: 800px;
+                max-width: 1200px;
                 overscroll-behavior: none;
                 width: 100%;
                 font-family: 'Open Sans', sans-serif;
